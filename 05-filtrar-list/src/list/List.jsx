@@ -18,7 +18,7 @@ function List() {
   }
 
   function filterItemsBySearchPatter(searchPatter) {
-    let filterItems = frameworksList.filter( item => item.toLowerCase().includes(searchPatter.toLowerCase()))
+    let filterItems = frameworksList.map( item => item.toLowerCase().includes(searchPatter.toLowerCase()) ? item : null)
     return filterItems
   }
 
