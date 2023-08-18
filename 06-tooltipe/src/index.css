@@ -1,0 +1,19 @@
+:root {
+  background-color: #242424;
+}
+
+.tooltip-text{
+  display: inline-block;
+  text-decoration: underline;
+}
+
+
+.tooltip {
+	position: absolute;
+	background: black;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 1.4;
+}
