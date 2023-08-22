@@ -1,6 +1,7 @@
+import { SearchContext, SearchProvider } from '../context/SearchContext';
 import frameworksList from './items';
 import ListView from './ListView';
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // Componentes de presentacion(Como se van a mostrar los datos) 
 // Componentes contenedores(Como se va a manejar la informacion)
 
@@ -8,6 +9,14 @@ import React, { useState } from 'react';
 function List() {
 
   let [items, setItems] = useState(frameworksList)
+  let {search} = useContext(SearchContext)
+
+  useEffect(
+    function() {
+      if (!search || search === '') return
+      filterItems(search)
+      
+    }, [search])
 
   function filterItems(searchPatter) {
     if(searchPatter === ''){
@@ -23,7 +32,7 @@ function List() {
   }
 
   return (
-      <ListView elements={items}  funcFilterItems = {filterItems}/>
+    <ListView elements={items} />
   );
 }
 export default List

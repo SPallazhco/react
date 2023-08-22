@@ -1,4 +1,17 @@
 
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
 
-const SearchContext = createContext({})
+export const SearchContext = createContext({ message:'CONTEXT' })
+
+export function SearchProvider({ children }) {
+    // Guardar en una propiedad del estado la palabra de busqueda
+    let [search, setSearch] = useState()
+    return(
+        <SearchContext.Provider value={ { search, setSearch } }>
+            {
+                children
+            }
+        </SearchContext.Provider>
+    )
+}
+

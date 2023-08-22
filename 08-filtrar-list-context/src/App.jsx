@@ -1,12 +1,15 @@
 import './App.css'
-import List from './list/list'
+import { SearchProvider } from './context/SearchContext'
+import List from './list/List'
 
 function App() {
 
   return (
     <>
       <div>
+      <SearchProvider>
         <List />
+      </SearchProvider>
       </div>
     </>
   )
