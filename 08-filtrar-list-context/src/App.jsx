@@ -1,4 +1,5 @@
 import './App.css'
+import { ItemsProvider } from './context/ItemsContext'
 import { SearchProvider } from './context/SearchContext'
 import List from './list/List'
 
@@ -8,7 +9,9 @@ function App() {
     <>
       <div>
       <SearchProvider>
-        <List />
+        <ItemsProvider>
+          <List />
+        </ItemsProvider>
       </SearchProvider>
       </div>
     </>
