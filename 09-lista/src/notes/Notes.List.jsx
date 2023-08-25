@@ -9,7 +9,7 @@ function NotesList() {
             <p style={ {textAlign: "right", color: "pink"} }>Usted tiene { notes.length } notas guardadas.</p>
             <div>
                 {
-                    notes.map( note => <Notes key={note.id} title={note.title} message={note.message}/> )
+                    notes.map( note => <Notes key={note.id} id={note.id} title={note.title} message={note.message}/> )
                 }
             </div>
         </>

@@ -26,9 +26,15 @@ function useNotes() {
         setNotes([noteObj, ...notes])
     }
 
+    function removeNotes(id) {
+        let newNotes = notes.filter( note => note.id !== id)
+        setNotes(newNotes)
+    }
+
     return {
         notes,
-        addNotes
+        addNotes,
+        removeNotes
     }
 }
 
